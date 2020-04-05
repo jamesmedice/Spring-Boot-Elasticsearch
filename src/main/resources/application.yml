@@ -1,0 +1,13 @@
+server: 
+  port: 8080
+
+spring:
+  elasticsearch:
+    rest:
+      uris: http://${ELASTICSEARCH_SERVER:127.0.0.1}:9200
+  data:
+    elasticsearch:
+      cluster-nodes: ${ELASTICSEARCH_SERVER:127.0.0.1}:9300
+      cluster-name: ${ELASTICSEARCH_CLUSTER:docker-cluster}
+      repositories:
+        enabled: true
